@@ -69,7 +69,7 @@ public class ApiController {
         // 调用模型生成的python脚本
         try{
             System.out.println("test");
-            String exe = "python3";
+            String exe = "python";
 //            String exe = "/usr/local/Caskroom/miniconda/base/envs/LandscapeTran/bin/python";
             String command = "src/main/python/test.py";
             String[] cmdArr = new String[] {exe, command, "src/main/python/"};
