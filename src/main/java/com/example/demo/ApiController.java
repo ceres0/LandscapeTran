@@ -36,7 +36,7 @@ public class ApiController {
         }
         System.out.println(FileDir + FileName);
         file.transferTo(new File(FileDir + FileName)); // 把它转为本地文件
-        return "img/" + FileName;
+        return FileName;
     }
 
     @Mapping("tran")

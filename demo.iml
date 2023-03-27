@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.10 (LandscapeTran)" />
+      <configuration sdkName="Python 3.9 (LandscapeTran)" />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -17,7 +17,6 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.10 (LandscapeTran) interpreter library" level="application" />
     <orderEntry type="library" name="Maven: org.noear:solon-api:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon-lib:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.data:2.2.6" level="project" />
@@ -53,5 +52,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-junit-jupiter:4.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.web.staticfiles:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon:2.2.6" level="project" />
+    <orderEntry type="library" name="Python 3.9 (LandscapeTran) interpreter library" level="application" />
   </component>
 </module>

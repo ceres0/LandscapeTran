@@ -11,7 +11,6 @@ import torch
 from models import Generator
 from datasets import ImageDataset
 
-
 if __name__ == '__main__':
     print("Begin Testing..")
     if len(sys.argv) > 1:
@@ -28,8 +27,10 @@ if __name__ == '__main__':
     parser.add_argument('--size', type=int, default=256, help='size of the data (squared assumed)')
     # parser.add_argument('--cuda', action='store_true',default=True, help='use GPU computation')
     parser.add_argument('--n_cpu', type=int, default=8, help='number of cpu threads to use during batch generation')
-    parser.add_argument('--generator_A2B', type=str, default='output/netG_A2B_imp.pth', help='A2B generator checkpoint file')
-    parser.add_argument('--generator_B2A', type=str, default='output/netG_B2A_imp.pth', help='B2A generator checkpoint file')
+    parser.add_argument('--generator_A2B', type=str, default='output/netG_A2B_imp.pth',
+                        help='A2B generator checkpoint file')
+    parser.add_argument('--generator_B2A', type=str, default='output/netG_B2A_imp.pth',
+                        help='B2A generator checkpoint file')
     # opt = parser.parse_args()
     opt = args = parser.parse_args(args=[])
     print(opt)
@@ -37,7 +38,6 @@ if __name__ == '__main__':
     # if torch.cuda.is_available() and not opt.cuda:
     #     print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
-    ###### Definition of variables ######
     # Networks
     netG_A2B = Generator(opt.input_nc, opt.output_nc)
     netG_B2A = Generator(opt.output_nc, opt.input_nc)
@@ -50,8 +50,6 @@ if __name__ == '__main__':
     netG_A2B.load_state_dict(torch.load(workDir + opt.generator_A2B))
     netG_B2A.load_state_dict(torch.load(workDir + opt.generator_B2A))
 
-    print("**")
-
     # Set model's test mode
     netG_A2B.eval()
     netG_B2A.eval()
@@ -63,31 +61,29 @@ if __name__ == '__main__':
     input_B = Tensor(opt.batchSize, opt.output_nc, opt.size, opt.size)
 
     # Dataset loader
-    transforms_ = [ transforms.ToTensor(),
-                    transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) ]
+    transforms_ = [transforms.ToTensor(),
+                   transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     dataloader = DataLoader(ImageDataset(workDir + opt.dataroot, transforms_=transforms_, mode='test'),
                             batch_size=opt.batchSize, shuffle=False, num_workers=opt.n_cpu)
-    ###################################
 
-    ###### Testing ######
-    # print("#########################")
     # Create output dirs if they don't exist
     if not os.path.exists('output/A'):
         os.makedirs('output/A')
     if not os.path.exists('output/B'):
         os.makedirs('output/B')
+
     for i, batch in enumerate(dataloader):
         # Set model input
         real_A = Variable(input_A.copy_(batch['A']))
         real_B = Variable(input_B.copy_(batch['B']))
 
         # Generate output
-        fake_B = 0.5*(netG_A2B(real_A).data + 1.0)
-        fake_A = 0.5*(netG_B2A(real_B).data + 1.0)
+        fake_B = 0.5 * (netG_A2B(real_A).data + 1.0)
+        fake_A = 0.5 * (netG_B2A(real_B).data + 1.0)
 
         # Save image files
-        save_image(fake_A, workDir + 'output/A/%04d.png' % (i+1))
-        save_image(fake_B, workDir + 'output/B/%04d.png' % (i+1))
+        save_image(fake_A, workDir + 'output/A/%04d.png' % (i + 1))
+        save_image(fake_B, workDir + 'output/B/%04d.png' % (i + 1))
 
-        print('Generated images %04d of %04d' % (i+1, len(dataloader)))
+        print('Generated images %04d of %04d' % (i + 1, len(dataloader)))
     # print('\n')
