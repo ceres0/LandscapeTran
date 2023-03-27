@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.9 (LandscapeTran)" />
+      <configuration sdkName="Python 3.10 (LandscapeTran)" />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -12,14 +12,14 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Python 3.10 (LandscapeTran) interpreter library" level="application" />
     <orderEntry type="library" name="Maven: org.noear:solon-api:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon-lib:2.2.6" level="project" />
-    <orderEntry type="library" name="Maven: org.noear:solon:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.data:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.proxy:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:9.4" level="project" />
@@ -31,7 +31,6 @@
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:2.0" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.boot.jlhttp:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.boot:2.2.6" level="project" />
-    <orderEntry type="library" name="Maven: org.noear:solon.web.staticfiles:2.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.noear:solon.web.cors:2.2.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.noear:solon-test:2.2.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.noear:solon.test:2.2.6" level="project" />
@@ -52,9 +51,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.12.19" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:3.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-junit-jupiter:4.11.0" level="project" />
-    <orderEntry type="library" name="Python 3.9 (LandscapeTran) interpreter library" level="application" />
-  </component>
-  <component name="PyDocumentationSettings">
-    <option name="renderExternalDocumentation" value="true" />
+    <orderEntry type="library" name="Maven: org.noear:solon.web.staticfiles:2.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.noear:solon:2.2.6" level="project" />
   </component>
 </module>

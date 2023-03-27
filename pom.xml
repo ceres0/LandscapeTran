@@ -36,6 +36,11 @@
             <artifactId>solon-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.web.staticfiles</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
